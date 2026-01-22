@@ -1,0 +1,15 @@
+<div class="main-page">
+  <h1>Library Book List</h1>
+  <hr>
+
+  <div class="book-item" *ngFor="let book of displayBooks">
+    <div class="book-details">
+      <h3>{{ book.title }}</h3>
+      <p>By: {{ book.author }}</p>
+    </div>
+
+    <span [style.color]="book.isAvailable ? 'green' : 'red'">
+      {{ book.isAvailable ? 'Available' : 'Borrowed' }}
+    </span>
+  </div>
+</div>

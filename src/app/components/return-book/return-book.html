@@ -1,0 +1,24 @@
+<div class="main-page">
+  <h1>Return a Book</h1>
+  <hr>
+
+  <form [formGroup]="returnForm" (ngSubmit)="onSubmit()" *ngIf="borrowedBooks.length > 0; else noBooks">
+    <mat-form-field appearance="outline" style="width: 100%;">
+      <mat-label>Select Book to Return</mat-label>
+      <mat-select formControlName="bookId">
+        <mat-option *ngFor="let book of borrowedBooks" [value]="book.id">
+          {{ book.title }} (ID: {{ book.id }})
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="accent" type="submit" [disabled]="returnForm.invalid">
+      Confirm Return
+    </button>
+  </form>
+
+  <ng-template #noBooks>
+    <p>No books are currently marked as borrowed.</p>
+  </ng-template>
+</div>
+

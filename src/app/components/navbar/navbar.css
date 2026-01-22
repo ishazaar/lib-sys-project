@@ -1,0 +1,22 @@
+/* src/app/components/navbar/navbar.component.css */
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.nav-link {
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

@@ -1,0 +1,26 @@
+<div class="form-container">
+  <h2>Borrow a Book</h2>
+
+  <form [formGroup]="borrowForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+      <mat-label>Select Book</mat-label>
+      <mat-select formControlName="bookId">
+        <mat-option *ngFor="let book of availableBooks" [value]="book.id">
+          {{ book.title }} by {{ book.author }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Member ID</mat-label>
+      <input matInput formControlName="memberId" placeholder="Enter numeric ID">
+      <mat-error *ngIf="borrowForm.get('memberId')?.hasError('pattern')">
+        Member ID must be a number
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="borrowForm.invalid">
+      Confirm Borrowing
+    </button>
+  </form>
+</div>

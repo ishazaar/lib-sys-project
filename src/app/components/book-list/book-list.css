@@ -1,0 +1,23 @@
+.main-page {
+  max-width: 800px;
+  margin: 20px auto;
+  font-family: sans-serif;
+}
+
+.book-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.book-details h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.book-details p {
+  margin: 5px 0 0;
+  color: #666;
+}
